@@ -12,7 +12,7 @@ RUN yum -y install --setopt=tsflags=nodocs java-1.8.0-openjdk-devel.x86_64 maven
 
 ENV ARCHIVA_VERSION 2.2.3
 ENV ARCHIVA_HOME /opt/archiva
-ENV ARCHIVA_URL=http://www.nic.funet.fi/pub/mirrors/apache.org/archiva/binaries/apache-archiva-${ARCHIVA_VERSION}-bin.tar.gz
+ENV ARCHIVA_URL=http://www.nic.funet.fi/pub/mirrors/apache.org/archiva/${ARCHIVA_VERSION}/binaries/apache-archiva-${ARCHIVA_VERSION}-bin.tar.gz
 
 RUN groupadd -r archiva -g 433 && useradd -u 431 -r -g archiva -d /opt/archiva -s /sbin/nologin -c "Archiva user" archiva
 
