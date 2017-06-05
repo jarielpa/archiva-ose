@@ -10,7 +10,7 @@ LABEL io.k8s.description="Apache Archiva Repository Manager" \
 
 RUN yum -y install --setopt=tsflags=nodocs java-1.8.0-openjdk-devel.x86_64 maven lsof curl tar && yum clean all
 
-ENV ARCHIVA_VERSION 2.2.0
+ENV ARCHIVA_VERSION 2.2.3
 ENV ARCHIVA_HOME /opt/archiva
 ENV ARCHIVA_URL=http://www.nic.funet.fi/pub/mirrors/apache.org/archiva/${ARCHIVA_VERSION}/binaries/apache-archiva-${ARCHIVA_VERSION}-bin.tar.gz
 
