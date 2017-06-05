@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><configuration>
-    <version>2</version>
+    <version>3</version>
     <repositoryScanning>
         <fileTypes>
             <fileType>
@@ -189,11 +189,21 @@
                     </user>
                     <dn>distinguishedName</dn>
                     <groups>
-                        <member>uniquemember</member>
+						<member>uniqueMember</member>
                         <class>groupOfUniqueNames</class>
                     </groups>
                 </config>
             </ldap>
+            <rest>
+				<csrffilter>
+					<enabled>true</enabled>
+					<disableTokenValidation>false</disableTokenValidation>
+					<absentorigin>
+						<deny>true</deny>
+					</absentorigin>
+				</csrffilter>
+				<baseUrl />
+			</rest>
             <application>
                 <url>$APP_URL</url>
                 <timestamp>EEE d MMM yyyy HH:mm:ss Z</timestamp>
@@ -275,6 +285,18 @@
             <artifact>jaxen:jaxen:1.0-FCS:full:jar</artifact>
         </legacyArtifactPath>
     </legacyArtifactPaths>
+    <archivaDefaultConfiguration>
+		<defaultCheckPaths>
+			<defaultCheckPath>
+				<url>http://download.oracle.com/maven</url>
+				<path>com/sleepycat/je/license.txt</path>
+			</defaultCheckPath>
+			<defaultCheckPath>
+				<url>https://download.oracle.com/maven</url>
+				<path>com/sleepycat/je/license.txt</path>
+			</defaultCheckPath>
+		</defaultCheckPaths>
+	</archivaDefaultConfiguration>
 
     $REPOSITORY_GROUP
 
