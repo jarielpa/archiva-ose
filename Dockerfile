@@ -21,9 +21,8 @@ RUN mkdir -p ${ARCHIVA_HOME} \
   && curl --fail --silent --location --retry 3 \
     ${ARCHIVA_URL} \
   | gunzip \
-  | tar x -C /tmp apache-archiva-${ARCHIVA_VERSION}-bin \
-  && mv /tmp/apache-archiva-${ARCHIVA_VERSION}-bin/* ${ARCHIVA_HOME}/ \
-  && rm -rf /tmp/apache-archiva-${ARCHIVA_VERSION}-bin
+  | tar x -C /tmp apache-archiva-${ARCHIVA_VERSION} \
+  && mv /tmp/apache-archiva-${ARCHIVA_VERSION}/* ${ARCHIVA_HOME}/
 
 ADD scripts /opt/archiva/bin/scripts
 
