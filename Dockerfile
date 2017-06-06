@@ -26,6 +26,7 @@ RUN mkdir -p ${ARCHIVA_HOME} \
 
 ADD scripts /opt/archiva/bin/scripts
 ADD archiva.xml /opt/archiva/conf
+ADD wrapper.conf /opt/archiva/conf
 
 RUN chown -R archiva:0 ${ARCHIVA_HOME}
 RUN chmod 774 -R ${ARCHIVA_HOME}
